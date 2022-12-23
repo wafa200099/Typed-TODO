@@ -28,15 +28,12 @@ const Todo: FC<Props> = ({ task, onDelete, onUpdateTask }) => {
   };
 
   const handleDelete = (id: number) => {
-    console.log("hiiiiiii");
-    
     onDelete(id);
   };
 
   const handleEdit = (e: FormEvent, id: number) => {
     e.preventDefault();
-    onUpdateTask({ id, taskName: editTask});
-    
+    onUpdateTask({ id, taskName: editTask });
     setIsEditing(false);
   };
 
@@ -48,15 +45,15 @@ const Todo: FC<Props> = ({ task, onDelete, onUpdateTask }) => {
           onChange={(e) => setEditTask(e.target.value)}
           ref={inputRef}
         />
-      ): <span className={task.isDone ? "strike" : ""}>{task.taskName}</span>}
-
-     
+      ) : (
+        <span className={task.isDone ? "strike" : ""}>{task.taskName}</span>
+      )}
 
       <div>
         <div className="icons-div">
           <button
             className="icons"
-            onClick={() => handleDone(task.id,!task.isDone)}
+            onClick={() => handleDone(task.id, !task.isDone)}
           >
             <MdDone style={{ color: "white" }} />
           </button>

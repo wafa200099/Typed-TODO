@@ -8,8 +8,6 @@ interface Props {
   task: ITask;
 }
 const DeleteModal: FC<Props> = ({ task, toggleDeleteModal, handleDelete }) => {
-  console.log("hiiiiiii");
-  
   return (
     <Modal>
       <h3>Are you sure Delete this Task ?</h3>
